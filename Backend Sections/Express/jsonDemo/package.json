@@ -1,0 +1,16 @@
+{
+  "name": "jsondemo",
+  "version": "1.0.0",
+  "description": "simple package demo for learning",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Erzinger",
+  "license": "ISC",
+  "dependencies": {
+    "cat-me": "^1.0.3",
+    "express": "^4.16.2",
+    "faker": "^4.1.0"
+  }
+}

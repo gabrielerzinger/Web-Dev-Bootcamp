@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+<h1>Register</h1>
+
+<form>
+	<p><label>First Name: <input type="text" name="nome" placeholder="John"></label>
+	<label>Last Name: <input type="text" name="sobrenome" placeholder="Doe"></label></p>
+
+	<p>
+		<label>Male <input type="radio" name="gender" value="M"></label>
+		<label>Female<input type="radio" name="gender" value="F"></label>
+		<label>Other<input type="radio" name="gender" value="O"></label>
+	</p>
+
+	<p>	
+		<label>Email:<input type="email" name="mail" placeholder="john@doe.com"></label>
+		<label>Password: <input type="password" name="pwd" minlength="5" maxlength="10" required></label>
+	</p>
+	<p>
+		<label>Birthday: <input type="date" name="datanasc"></label>
+	</p>
+	<p>
+		<label>I agree <input type="checkbox" name="terms"></label>
+	</p>
+	<button>Submit</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+img {
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+}
+
+p{
+	font-family: 'Poiret One', cursive;
+	text-align: center;
+	font-size: 2em;
+	margin-left: 1.66%;
+	border-bottom: 2px solid pink;
+	padding-bottom: 0.5%;
+	width: 30%;
+}

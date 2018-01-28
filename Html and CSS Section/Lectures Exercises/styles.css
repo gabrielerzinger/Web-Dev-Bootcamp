@@ -1,0 +1,27 @@
+
+h1 {
+	color: rgb(255,100,100);
+	text-align: center;
+}
+
+th{
+	width: 100px;
+	height: 100px;
+}
+
+table{
+	margin: auto;
+}
+
+#rb {
+	border-right: 1px red solid;
+	border-bottom: 1px red solid;
+}
+
+#r {
+	border-right: 1px red solid;
+}
+
+#b {
+	border-bottom: 1px	red	solid;
+}
