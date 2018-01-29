@@ -6,15 +6,15 @@ This is a repository to keep track of my progress on the course [The web develop
 -  [X] CSS3
 -  [X] JavaScript
 -  [X] Bootstrap
--  [ ] SemanticUI
+-  [X] SemanticUI
 -  [X] DOM Manipulation
 -  [X] jQuery
 -  [X] Unix(Command Line) Commands
 -  [X] NodeJS
 -  [X] NPM
 -  [X] ExpressJS
--  [ ] REST
--  [ ] MongoDB
+-  [X] REST
+-  [X] MongoDB
 -  [ ] Database Associations
 -  [ ] Authentication
 -  [ ] PassportJS
