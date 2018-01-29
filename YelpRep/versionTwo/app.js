@@ -78,7 +78,7 @@ app.get("/reps/:id", function(rq, rs){
     });
 });
 
-var port = process.env.PORT || 3000;
-app.listen(port , function(){
+
+app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Yelp Camp Server has started.");
 });
