@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+
+<div class="ui main text container ">
+    <div class="ui huge header"> Blog </div>
+        <div class="ui top attached segment">
+            <div class="ui divided items">
+            <% blogs.forEach(function(blog){ %>
+                <div class="item">
+                    <div class="ui medium image">
+                        <img src = "<%= blog.image %>">
+                    </div>
+                    <div class="content">
+                        <div class="header"><%= blog.title %></div>    
+                        <div class="meta">
+                             <span><%= blog.created.toDateString() %></span>       
+                        </div>
+                        <div class="description">
+                            <p><%- blog.body.substring(0,101) + "..." %></p>
+                        </div>
+                        <div class="extra">
+                            <a href="/blogs/<%=blog._id%>" class="ui teal basic large button">
+                                Read more </a>        
+                        </div>
+                    </div>
+                    
+                </div>  
+            <% }) %>
+
+            </div>
+        </div>
+    
+    
+</div>
+
+<% include ./partials/footer %>
