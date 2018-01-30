@@ -1,28 +1,15 @@
 var express    = require("express"),
     app        = express(),
     bodyParser = require("body-parser"),
-    mongoose   = require("mongoose");
+    mongoose   = require("mongoose"),
+    Rep        = require("./models/rep"),
+    seedDB     = require("./seeds");
+    
+
+seedDB();
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 mongoose.connect("mongodb://localhost/yelp_rep");
-
-var repSchema = new mongoose.Schema({
-    name        : String,
-    image       : String,
-    description : String
-});
-
-var Rep = mongoose.model("Rep", repSchema);
-
-/*
-Rep.create({
-    name        : "Mirante",
-    image       : "http://www.photosforclass.com/download/3853609644",
-    description : "Study Only. No party. No Pizza."
-}, function(err, rep){
-    console.log(rep);
-})*/
-
 
 app.get("/", function(rq, rs){
     rs.render("landing");

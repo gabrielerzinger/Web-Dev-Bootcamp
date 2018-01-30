@@ -1,0 +1,16 @@
+<% include ../partials/header %>
+
+<p><%= rep.name %></p>
+<img src = "<%= rep.image %>">
+<p><%= rep.description %></p>
+
+<p><a class="btn btn-primary btn-sucess" href="/reps/<%=rep._id%>/comments/new" role="button">Add new Comment</a></p>
+
+<p>
+    <% rep.comments.forEach(function(com){%>
+           <p> <strong><%= com.author %></strong> - 
+                <%= com.text %></p>
+            <% }); %>        
+</p>
+
+<% include ../partials/footer %>
