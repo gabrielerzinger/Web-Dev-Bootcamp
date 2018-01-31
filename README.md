@@ -16,6 +16,6 @@ This is a repository to keep track of my progress on the course [The web develop
 -  [X] REST
 -  [X] MongoDB
 -  [X] Database Associations
--  [ ] Authentication
--  [ ] PassportJS
--  [ ] Authorization
+-  [X] Authentication
+-  [X] PassportJS
+-  [X] Authorization
