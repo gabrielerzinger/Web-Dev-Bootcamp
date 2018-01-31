@@ -2,7 +2,7 @@ var express  = require("express");
 var router   = express.Router();
 var passport = require("passport");
 var User     = require("../models/user");
-
+var middleware = require("../middleware");
 
 router.get("/", function(rq, rs){
     rs.render("landing");
@@ -18,10 +18,10 @@ router.post("/register", function(rq, rs){
         rq.body.password, function(err, user){
            if(err){
                console.log(err);
-               return rs.render("/register");
+               return rs.render("users/register");
            }else{
                passport.authenticate("local")(rq, rs, function(){
-                   rs.redirect("/rep");
+                   rs.redirect("/reps");
                });
            }
         });
@@ -40,16 +40,5 @@ router.get("/logout", function(rq, rs){
     rq.logout();
     rs.redirect("/");
 });
-
-
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    else{
-        res.redirect("/login");
-    }
-}
-
 
 module.exports = router;

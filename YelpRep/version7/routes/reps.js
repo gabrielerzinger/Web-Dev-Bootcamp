@@ -2,6 +2,7 @@ var express = require("express");
 var router  = express.Router();
 var Rep     = require("../models/rep");
 var Comment = require("../models/comment");
+var middleware = require("../middleware");
 
 router.get("/", function(rq, rs){
     //    rs.render("republicas", {republicas : republicas});
@@ -13,7 +14,7 @@ router.get("/", function(rq, rs){
     });
 });
 
-router.post("/", isLoggedIn, function(rq, rs){
+router.post("/", middleware.isLoggedIn, function(rq, rs){
     var name        = rq.body.name;
     var image       = rq.body.image;
     var description = rq.body.description;
@@ -38,7 +39,7 @@ router.post("/", isLoggedIn, function(rq, rs){
     rs.redirect("/reps");
 });
 
-router.get("/new", isLoggedIn ,function(rq, rs){
+router.get("/new", middleware.isLoggedIn ,function(rq, rs){
    rs.render("reps/new.ejs");
 });
 
@@ -55,15 +56,19 @@ router.get("/:id", function(rq, rs){
             });
 });
 
-//Middleware
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    else{
-        res.redirect("/login");
-    }
-}
+router.get("/:id/edit", middleware.checkOwnership,function(rq, rs){
+    Rep.findById(rq.params.id, function(err, foundRep){
+            rs.render("reps/edit.ejs", {rep:foundRep});});
+});
 
+router.put("/:id", middleware.checkOwnership,function(rq, rs){
+    Rep.findByIdAndUpdate(rq.params.id, rq.body.rep, function(err, updatedRep){
+            rs.redirect("/reps/"+rq.params.id);});
+})
+
+router.delete("/:id",middleware.checkOwnership, function(rq, rs){
+    Rep.findByIdAndRemove(rq.params.id, function(err){
+        rs.redirect("/reps");});
+});
 
 module.exports = router;

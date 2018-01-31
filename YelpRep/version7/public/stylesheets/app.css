@@ -5,3 +5,8 @@
 .thumbnail {
     padding: 0;
 }
+
+#comdel {
+    padding: 1px;
+    display: inline;
+}
