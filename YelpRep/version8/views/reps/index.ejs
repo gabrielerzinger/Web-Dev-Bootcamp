@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class = "jumbotron">
+        <div class = "container">
+            <h1><i class ="glyphicon glyphicon-home
+"></i> Welcome to YelpRep! </h1>
+            <p>View our hand-picked reps from all over Itajubá</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href = "/reps/new">Add new rep</a>
+            </p>
+        </div>
+    </header>
+    
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+            <% republicas.forEach(function(rep){%>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                        <img src="<%= rep.image %>">
+                        <div class="caption">
+                            <h4><strong><%=  rep.name %></h4></strong>
+                        </div>
+                        <p>
+                            <a href="/reps/<%= rep._id %>" class="btn btn-primary">Show more</a>
+                        </p>
+                    </div>
+                </div>
+            <% }); %>        
+    </div>
+    
+
+<% include ../partials/footer %>
+</div>
+
+
+
