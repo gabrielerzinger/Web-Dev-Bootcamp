@@ -1,0 +1,84 @@
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+    
+  background-image: url(http://simi.org.br/files/Janeiro%20-%202017/unifei.nova.jpg);
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://i.ytimg.com/vi/kIb7FrzdI8Y/maxresdefault.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://sites.google.com/site/calculo1unifei2017/_/rsrc/1488723363091/home/UNIFEI.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  animation-delay: 30s; 
+  
+  background-image: url(https://2015.unifei.edu.br/files/files/imagem/noticia/12513523_919451224836522_2988473808862424507_o_0.jpg) 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(http://www.mestredoenem.com.br/wp-content/uploads/2016/02/710x375xUNIFEI-710x375.jpg.pagespeed.ic.M2OLDOnKsG.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
